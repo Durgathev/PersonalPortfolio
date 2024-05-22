@@ -1,0 +1,273 @@
+// Service Section
+
+.ServiceSection {
+  position: relative;
+  max-width: 1366px;
+  margin: 0 auto;
+  border-bottom: 1px solid #dadce0;
+
+  .ServiceFlex {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+
+    .CodeBlob {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      z-index: 1;
+    }
+
+    .ServiceContent {
+      position: relative;
+      flex-basis: 50%;
+
+      .ServiceBlog {
+        position: absolute;
+        top: 30px;
+        left: -20px;
+        z-index: 1;
+      }
+
+      p {
+        position: relative;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        color: #000;
+        z-index: 2;
+
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+      h1,
+      h4 {
+        position: relative;
+        font-family: "Epilogue", sans-serif;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        margin: 8px 0;
+        color: #000;
+        z-index: 2;
+      }
+      h1 {
+        color: #33e2fa;
+      }
+    }
+    // DarkMode
+    .ServiceContent.D0e1630 {
+      p {
+        color: #fff;
+      }
+      h4 {
+        color: #fff;
+      }
+    }
+    //
+    .ServiceImage {
+      flex-basis: 50%;
+
+      .ServiceImageFlex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+
+        .BoxBlob {
+          position: absolute;
+          top: -25px;
+          right: 0;
+          z-index: 1;
+          user-select: none;
+          pointer-events: none;
+        }
+
+        .WebDevelopment {
+          div {
+            position: relative;
+            min-width: 250px;
+            padding: 30px;
+            margin-right: 20px;
+            background: #fff;
+            border-radius: 10px;
+            border-bottom-right-radius: 0;
+            box-shadow: 0 5px 10px 0 rgba($color: #9aa0b9, $alpha: 0.05),
+              0 15px 40px 0 rgba($color: #9aa0b9, $alpha: 0.2);
+            transition: 0.1s linear;
+
+            p {
+              margin-top: 10px;
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 18px;
+              line-height: 24px;
+              color: #000;
+            }
+            &:hover {
+              background: #ff0066;
+              transform: translateY(-10px);
+              p {
+                color: #fff;
+              }
+              svg path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+
+        // DarkMode
+        .WebDevelopment.D0e1630 {
+          div {
+            background: rgba($color: #808dad, $alpha: 0.08);
+            box-shadow: none;
+            p {
+              color: #fff;
+            }
+            svg path {
+              fill: #fff;
+            }
+            &:hover {
+              background: #ff0066 !important;
+              transform: translateY(-10px);
+            }
+          }
+        }
+        //
+
+        .UIAndUX {
+          margin-bottom: 20px;
+          background: #ff0066 !important;
+          p {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media only screen and (max-width: 768px) {
+  .ServiceFlex {
+    flex-wrap: wrap;
+    height: auto !important;
+    .CodeBlob {
+      display: none;
+    }
+
+    .ServiceContent {
+      flex-basis: 100% !important;
+      margin-top: 30px;
+
+      p {
+        font-size: 18px;
+      }
+    }
+    .ServiceImage {
+      flex-basis: 100% !important;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 585px) {
+  .ServiceSection {
+    .ServiceFlex {
+      .ServiceImage {
+        .ServiceImageFlex {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          .WebDevelopment {
+            div {
+              margin-bottom: 20px;
+              max-width: 250px;
+              min-width: auto;
+            }
+          }
+          .UIAndDegital {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .ServiceFlex {
+    padding: 10px;
+    .ServiceContent {
+      .ServiceBlog {
+        top: 40px !important;
+        left: -20px;
+        z-index: 1;
+        opacity: 0.6;
+      }
+      p {
+        font-size: 16px;
+      }
+      h1,
+      h4 {
+        font-size: 28px !important;
+      }
+    }
+    .ServiceImage {
+      margin-top: 50px;
+
+      .ServiceImageFlex {
+        justify-content: flex-start !important;
+        width: 100%;
+
+        .BoxBlob {
+          top: -10px !important;
+          img {
+            width: 50px;
+          }
+        }
+
+        .WebDevelopment {
+          width: 100%;
+          div {
+            margin-bottom: 20px;
+            max-width: 100% !important;
+            min-width: 100% !important;
+            width: 100% !important;
+          }
+        }
+        .UIAndDegital {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .ServiceFlex {
+    // flex-wrap: wrap;
+    // height: calc(100vh - 90px);
+    padding: 10px;
+    .ServiceContent {
+      margin-top: 20px;
+      p {
+        font-size: 14px !important;
+      }
+      h1,
+      h4 {
+        font-size: 25px !important;
+      }
+    }
+  }
+}

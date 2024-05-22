@@ -1,0 +1,390 @@
+body {
+  background-color: #fff;
+}
+body.D0e1630 {
+  background: #0e1630;
+}
+.NavBarSection {
+  padding: 30px;
+  border-bottom: 1px solid #dadce0;
+  background: #fff;
+  // transition: 1s linear;
+  // box-shadow: 0 0 15px rgba($color: #000000, $alpha: .1);
+
+  &.fixed-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    // transition: 1s linear;
+    border: none;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .NavBarMain {
+    // max-width: 1266px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .NavLogo {
+      h1 {
+        font-size: 22px;
+        font-family: Quicksand;
+        font-weight: bold;
+      }
+      span {
+        color: #fff;
+        background-color: #33e2fa;
+        padding: 5px;
+        border-top-left-radius: 12px;
+      }
+    }
+    // DarkMode
+    .NavLogo.D0e1630 {
+      h1 {
+        color: #fff;
+      }
+    }
+    .NavLinks {
+      .CloseHam,
+      .NavSocialMedia {
+        display: none;
+      }
+      ul {
+        list-style: none;
+        font-family: inter;
+        display: flex;
+        align-items: center;
+
+        a {
+          color: #8a8a8a;
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        li {
+          padding: 0 26px;
+          font-size: 15px;
+          &:hover {
+            color: #33e2fa;
+          }
+        }
+
+        // Mode Toggle section
+        .ChangeModeToggle {
+          position: relative;
+          height: 25px;
+          width: 46px;
+          background: rgba($color: #808dad, $alpha: 0.08);
+          display: flex;
+          justify-content: space-around;
+          line-height: 27px;
+          border-radius: 20px;
+          border: 1px solid rgba($color: #808dad, $alpha: 0.52);
+          cursor: pointer;
+          user-select: none;
+
+          .ModeToggleBlog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 23px;
+            height: 23px;
+            background: #808dad;
+            border-radius: 50%;
+            // transition: 5s linear;
+          }
+          &.DActive {
+            .ModeToggleBlog {
+              left: auto;
+              right: 0;
+            }
+          }
+        }
+      }
+      .NavActive li {
+        color: #33e2fa !important;
+      }
+    }
+
+    // DarkMode
+    .NavLinks.D0e1630 {
+      ul {
+        li {
+          color: #fff;
+          &:hover {
+            color: #33e2fa;
+          }
+        }
+      }
+    }
+  }
+}
+
+.NavBarSection.D0e1630 {
+  background: #0e1630 !important;
+}
+// Mode Toggle section
+.ChangeModeToggle {
+  position: relative;
+  height: 25px;
+  width: 46px;
+  background: rgba($color: #808dad, $alpha: 0.08);
+  display: flex;
+  justify-content: space-around;
+  line-height: 27px;
+  border-radius: 20px;
+  border-bottom: 1px solid rgba($color: #808dad, $alpha: 0.52);
+  cursor: pointer;
+
+  .ModeToggleBlog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 23px;
+    height: 23px;
+    background: #808dad;
+    border-radius: 50%;
+    // transition: 5s linear;
+  }
+
+  //   DarkMode
+  &.DActive {
+    .ModeToggleBlog {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .NavLinks {
+    top: 0;
+    right: 0;
+    position: fixed;
+    transform: translateX(-1000%);
+    opacity: 0;
+    max-width: 320px;
+    width: calc(100% - 56px);
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+    z-index: 11;
+
+    .CloseHam {
+      padding: 30px;
+      display: block !important;
+      text-align: right;
+      border-bottom: 1px solid rgba($color: #808dad, $alpha: 0.52);
+
+      svg {
+        width: 24px;
+        fill: #808dad;
+      }
+    }
+
+    .NavSocialMedia {
+      display: flex !important;
+      justify-content: space-between;
+      max-width: 200px;
+      margin-top: 20px;
+      margin-left: 26px;
+      svg path {
+        fill: #8a8a8a;
+      }
+    }
+    .NavSocialMedia.D0e1630 {
+      svg path {
+        fill: #808dad;
+      }
+    }
+
+    &.HamActive {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    ul {
+      // margin-top: 90px;
+      flex-direction: column;
+      align-items: flex-start !important;
+      a {
+        li {
+          margin: 20px 0;
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+  .NavLinks.D0e1630 {
+    background: #0e1630;
+  }
+  .NavMobileHam {
+    display: flex;
+    align-items: center;
+
+    .HamBurger {
+      display: flex;
+    }
+
+    .ChangeModeToggle {
+      margin-right: 30px;
+    }
+
+    .HamBurger svg path {
+      fill: #808dad;
+    }
+    .d-none {
+      display: flex;
+    }
+  }
+  .blackLayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    display: none;
+    &.HamActive {
+      display: block;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .NavBarSection {
+    padding: 10px;
+  }
+  .NavMobileHam .ChangeModeToggle {
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .NavBarSection {
+    padding: 20px 10px;
+  }
+  .NavMobileHam .ChangeModeToggle {
+    margin-right: 10px;
+  }
+}
+
+// Nofication
+.ModeChangeNotificationFlex {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #ff0066;
+  z-index: 5;
+  bottom: -100px;
+  // opacity: 0;
+  transition: 0.5s;
+  // display: none;
+  // transform: translateY(100px);
+  // animation: NotifiAni 3s infinite;
+
+  // @keyframes NotifiAni {
+  //   0% {
+  //     // transform: translateY(100px);
+  //     // display: block;
+  //     bottom: -100px;
+  //     opacity: 0;
+  //   }
+  //   50% {
+  //     bottom: 30px;
+  //     // transform: translateY(0px);
+  //     opacity: 1;
+  //     // animation-play-state: paused;
+  //   }
+  //   100% {
+  //     bottom: -100px;
+  //     // display: none;
+  //     opacity: 0;
+  //   }
+  // }
+
+  .NotifiImage {
+    flex-basis: 30%;
+
+    // text-align: center;
+    img {
+      // padding-left: 10px;
+      width: 30px;
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+  .NotifiContent {
+    flex-basis: 70%;
+
+    p {
+      font-size: 15px;
+      font-weight: 600;
+      font-family: Quicksand;
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+  .NotifiArrow {
+    position: absolute;
+    right: 20px;
+    bottom: -14px;
+    box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.1);
+    svg {
+      // width: 100px;
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
+.ModeChangeNotificationFlex.D0e1630 {
+  background: rgba($color: #808dad, $alpha: 0.08) !important;
+  .NotifiArrow {
+    svg {
+      path {
+        fill: rgba($color: #808dad, $alpha: 0.08) !important;
+      }
+    }
+  }
+
+  .NotifiImage {
+    img {
+      &:first-child {
+        display: block;
+      }
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+  .NotifiContent {
+    p {
+      color: #fff;
+      &:first-child {
+        display: block;
+      }
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+.ModeChangeNotificationFlex.activate {
+  bottom: 30px;
+}
+// @media only screen and (max-width: 400px) {
